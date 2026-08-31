@@ -36,6 +36,8 @@ Extraction Agent
    ↓
 Validation Agent
    ↓
+Routing Agent
+   ↓
 Verification Agent
    ↓
 Healthcare Staff
@@ -47,14 +49,14 @@ The system converts patient conversations into structured and verified informati
 
 ## 🤖 AI Agents
 
-| Agent | Responsibility |
-|---|---|
-| Intake | Collect patient information |
-| Extraction | Convert conversation → JSON |
-| Validation | Check required fields |
-| Document | Document/OCR processing *(future)* |
-| Routing | Administrative routing *(future)* |
-| Verification | Verify extracted information |
+| Agent        | Responsibility                     |
+| ------------ | ---------------------------------- |
+| Intake       | Collect patient information        |
+| Extraction   | Convert conversation → JSON        |
+| Validation   | Check required fields              |
+| Document     | Document/OCR processing *(future)* |
+| Routing      | Administrative routing             |
+| Verification | Verify extracted information       |
 
 ---
 
@@ -62,21 +64,21 @@ The system converts patient conversations into structured and verified informati
 
 ### Current
 
-- C++
-- CMake
-- libcurl
-- nlohmann/json
-- LLM API
-- MinGW / MSYS2
+* C++20
+* CMake
+* libcurl
+* nlohmann/json
+* LLM API
+* MinGW / MSYS2
 
 ### Planned
 
-- REST API
-- Database
-- Web Frontend
-- OCR
-- Document Processing
-- Cloud Deployment
+* REST API
+* Database
+* Web Frontend
+* OCR
+* Document Processing
+* Cloud Deployment
 
 ---
 
@@ -90,6 +92,11 @@ mediflow/
 │   ├── models/
 │   └── llm/
 ├── tests/
+│   ├── PatientTests.cpp
+│   ├── ValidationTests.cpp
+│   ├── RoutingTests.cpp
+│   ├── VerificationTests.cpp
+│   └── PipelineTests.cpp
 ├── data/
 ├── CMakeLists.txt
 └── README.md
@@ -101,10 +108,10 @@ mediflow/
 
 ### Requirements
 
-- CMake
-- MinGW/MSYS2
-- C++17 or newer
-- LLM API key
+* CMake
+* MinGW/MSYS2
+* C++17 or newer
+* LLM API key
 
 ### Configure
 
@@ -130,6 +137,52 @@ cmake --build .
 ```cmd
 MediFlow.exe
 ```
+
+---
+
+## 🧪 Tests
+
+MediFlow AI includes automated tests for the main components of the system.
+
+### Test Suite
+
+```text
+PatientTests
+ValidationTests
+RoutingTests
+VerificationTests
+PipelineTests
+```
+
+### Run All Tests
+
+From the `build` directory:
+
+```cmd
+ctest --output-on-failure
+```
+
+### Current Result
+
+```text
+100% tests passed
+5 tests passed
+```
+
+### Tested Scenarios
+
+| Scenario               | Result |
+| ---------------------- | ------ |
+| Valid patient          | PASS   |
+| Missing phone          | PASS   |
+| Invalid age            | PASS   |
+| Missing reason         | PASS   |
+| Dentistry routing      | PASS   |
+| Ophthalmology routing  | PASS   |
+| Dermatology routing    | PASS   |
+| Verification approval  | PASS   |
+| Verification rejection | PASS   |
+| Complete pipeline      | PASS   |
 
 ---
 
@@ -170,6 +223,8 @@ Reason: headache
 Duration: three days
 Phone: 923000000
 
+Department: General Consultation
+
 Status: APPROVED
 
 ================================
@@ -183,13 +238,12 @@ Due to the limited hackathon development time, the current MVP focuses on the co
 
 The following components are planned for future development:
 
-- Frontend
-- Database
-- REST API
-- OCR
-- Document Agent
-- Routing Agent
-- Production deployment
+* Frontend
+* Database
+* REST API
+* OCR
+* Document Agent
+* Production deployment
 
 ---
 
@@ -197,7 +251,7 @@ The following components are planned for future development:
 
 MediFlow AI aims to reduce administrative workload so healthcare staff can spend more time focused on **patients rather than repetitive data collection**.
 
-> **Collect → Structure → Validate → Verify → Assist**
+> **Collect → Structure → Validate → Route → Verify → Assist**
 
 ---
 
