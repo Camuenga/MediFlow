@@ -9,6 +9,7 @@
 #include "agents/ExtractionAgent.hpp"
 #include "agents/ValidationAgent.hpp"
 #include "agents/VerificationAgent.hpp"
+#include "agents/RoutingAgent.hpp"
 
 class MediFlowPipeline
 {
@@ -24,6 +25,7 @@ private:
     ExtractionAgent extractionAgent;
     ValidationAgent validationAgent;
     VerificationAgent verificationAgent;
+    RoutingAgent routingAgent;
 };
 
 #endif

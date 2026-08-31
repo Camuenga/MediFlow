@@ -3,9 +3,10 @@
 void AgentManager::addAgent(
     std::unique_ptr<Agent> agent)
 {
-    agents.push_back(
-        std::move(agent)
-    );
+    if(!agent){
+        throw std::invalid_argument("Cannot add a null agent.");
+    }
+    agents.push_back(std::move(agent));
 }
 
 std::string AgentManager::process(
@@ -15,6 +16,9 @@ std::string AgentManager::process(
 
     for (auto& agent : agents)
     {
+        if(!agent){
+            throw std::runtime_error("AgentManager contains a null agent.");
+        }
         data = agent->process(data);
     }
 

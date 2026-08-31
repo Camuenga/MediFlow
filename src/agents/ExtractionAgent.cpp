@@ -44,6 +44,11 @@ std::string ExtractionAgent::process(const std::string& input)
             - If the duration is not provided, use "".
             - If the phone is not provided, use "".
             - If no documents are provided, use [].
+            Extract only the value of each field.
+
+            For the "name" field:
+            - Return only the person's actual name.
+            - Do not include phrases such as "my name is", "I am", "name:", etc.
         )";
 
     return llmClient.chat(systemPrompt,input);

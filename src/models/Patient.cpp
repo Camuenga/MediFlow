@@ -28,7 +28,7 @@ Patient patientFromJson(const std::string& input){
 	}
 
 	if(data.contains("age") && data["age"].is_number_integer()){
-		patient.age = data["age"];
+		patient.age = data["age"].get<int>();
 	}
 
 	if(data.contains("reason") && data["reason"].is_string()){

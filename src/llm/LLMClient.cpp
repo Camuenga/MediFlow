@@ -43,8 +43,7 @@ LLMClient::LLMClient()
 
     apiKey = key;
 
-    const char* modelName =
-        std::getenv("MEDIFLOW_MODEL");
+    const char* modelName = std::getenv("MEDIFLOW_MODEL");
 
     if (!modelName || std::string(modelName).empty())
     {
@@ -100,8 +99,7 @@ std::string LLMClient::chat(
         "Content-Type: application/json"
     );
 
-    const std::string authorization =
-        "Authorization: Bearer " + apiKey;
+    const std::string authorization = "Authorization: Bearer " + apiKey;
 
     headers = curl_slist_append(
         headers,
@@ -154,8 +152,7 @@ std::string LLMClient::chat(
 
     if (result != CURLE_OK)
     {
-        const std::string error =
-            curl_easy_strerror(result);
+        const std::string error = curl_easy_strerror(result);
 
         curl_slist_free_all(headers);
         curl_easy_cleanup(curl);

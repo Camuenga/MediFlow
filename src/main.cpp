@@ -1,129 +1,68 @@
-#include <iostream>
-#include <windows.h>
-
-#include "llm/LLMClient.hpp"
 #include "MediFlowPipeline.hpp"
-#include "models/Patient.hpp"
 
 #include <nlohmann/json.hpp>
+
+#include <iostream>
+#include <string>
 
 using json = nlohmann::json;
 
 int main()
 {
-    // UTF-8 no Windows
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
-
     try
     {
-        // ================================
-        // LLM CLIENT
-        // ================================
         LLMClient llmClient;
 
-        // ================================
-        // MEDIFLOW PIPELINE
-        // ================================
         MediFlowPipeline pipeline(&llmClient);
 
-        // ================================
-        // PATIENT INPUT
-        // ================================
         const std::string input = R"(
-            My name is John Manuel. 
-            I am 35 years old. 
-            I have had a headache for three days. 
+            My name is Leumim Camuenga.
+            I'm 24 years old.
+            I have been sick for 3 days with head paining.
             My phone number is 923000000.
         )";
 
-        // ================================
-        // PROCESS PIPELINE
-        // ================================
-        const std::string result =
-            pipeline.process(input);
+        const std::string result = pipeline.process(input);
 
-        // ================================
-        // PARSE FINAL RESULT
-        // ================================
+        // Parse final result
         const json data = json::parse(result);
 
-        Patient patient =
-            patientFromJson(result);
-
-        // ================================
-        // VERIFICATION
-        // ================================
-        bool approved = false;
-
-        if (data.contains("verification") &&
-            data["verification"].contains("approved") &&
-            data["verification"]["approved"].is_boolean())
-        {
-            approved =
-                data["verification"]["approved"].get<bool>();
-        }
-
-        // ================================
-        // FINAL MEDIFLOW INTERFACE
-        // ================================
         std::cout << "\n";
         std::cout << "================================\n";
-        std::cout << "       MEDIFLOW AI\n";
-        std::cout << "================================\n\n";
+        std::cout << "          MEDIFLOW AI\n";
+        std::cout << "================================\n";
+        std::cout << "\n";
+
+        const bool approved = data["verification"]["approved"].get<bool>();
 
         if (approved)
         {
-            std::cout
-                << "Patient verified successfully\n\n";
-
-            std::cout
-                << "Name: "
-                << patient.name
-                << '\n';
-
-            std::cout
-                << "Age: "
-                << patient.age
-                << '\n';
-
-            std::cout
-                << "Reason: "
-                << patient.reason
-                << '\n';
-
-            std::cout
-                << "Duration: "
-                << patient.duration
-                << '\n';
-
-            std::cout
-                << "Phone: "
-                << patient.phone
-                << '\n';
-
-            std::cout << "\n";
-            std::cout
-                << "Status: APPROVED\n";
+            std::cout << "Patient verified successfully\n\n";
         }
         else
         {
-            std::cout
-                << "Patient verification failed\n\n";
-
-            std::cout
-                << "Status: REJECTED\n";
+            std::cout << "Patient verification failed\n\n";
         }
 
-        std::cout
-            << "================================\n";
+        std::cout << "Name: " << data["name"].get<std::string>()  << '\n';
+
+        std::cout << "Age: " << data["age"].get<int>() << '\n';
+
+        std::cout << "Reason: " << data["reason"].get<std::string>() << '\n';
+
+        std::cout << "Duration: " << data["duration"].get<std::string>() << '\n';
+
+        std::cout << "Phone: " << data["phone"].get<std::string>() << '\n';
+
+        std::cout << "\nDepartment: " << data["routing"]["department"].get<std::string>()<< '\n';
+
+        std::cout << "\nStatus: " << (approved ? "APPROVED" : "REJECTED") << '\n';
+
+        std::cout << "================================\n";
     }
     catch (const std::exception& e)
     {
-        std::cerr
-            << "\nERROR:\n"
-            << e.what()
-            << '\n';
+        std::cerr << "\nERROR:\n"  << e.what()  << '\n';
 
         return 1;
     }

@@ -18,11 +18,18 @@ MediFlowPipeline::MediFlowPipeline(
 std::string MediFlowPipeline::process(
     const std::string& input)
 {
-    // 1. Intake
+    // ========================================
+    // 1. INTAKE
+    // ========================================
+
     const std::string intakeResult =
         intakeAgent.process(input);
 
-    // 2. Extraction
+
+    // ========================================
+    // 2. EXTRACTION
+    // ========================================
+
     const std::string extractionResult =
         extractionAgent.process(intakeResult);
 
@@ -31,13 +38,16 @@ std::string MediFlowPipeline::process(
         << extractionResult
         << '\n';
 
-    // 3. Convert extracted JSON -> Patient
+
+    // ========================================
+    // 3. JSON -> Patient
+    // ========================================
+
     Patient patient;
 
     try
     {
-        patient =
-            patientFromJson(extractionResult);
+        patient = patientFromJson(extractionResult);
     }
     catch (const json::parse_error& e)
     {
@@ -48,11 +58,19 @@ std::string MediFlowPipeline::process(
         );
     }
 
-    // 4. Convert Patient -> JSON
+
+    // ========================================
+    // 4. Patient -> JSON
+    // ========================================
+
     const std::string patientJson =
         patientToJson(patient);
 
-    // 5. Validation
+
+    // ========================================
+    // 5. VALIDATION
+    // ========================================
+
     const std::string validationResult =
         validationAgent.process(patientJson);
 
@@ -61,7 +79,11 @@ std::string MediFlowPipeline::process(
         << validationResult
         << '\n';
 
-    // 6. Verify validation structure
+
+    // ========================================
+    // 6. CHECK VALIDATION
+    // ========================================
+
     json validatedJson;
 
     try
@@ -78,6 +100,7 @@ std::string MediFlowPipeline::process(
         );
     }
 
+
     if (!validatedJson.contains("validation") ||
         !validatedJson["validation"].contains("valid"))
     {
@@ -86,8 +109,11 @@ std::string MediFlowPipeline::process(
         );
     }
 
+
     const bool valid =
-        validatedJson["validation"]["valid"].get<bool>();
+        validatedJson["validation"]["valid"]
+            .get<bool>();
+
 
     if (!valid)
     {
@@ -96,20 +122,40 @@ std::string MediFlowPipeline::process(
         );
     }
 
-    // 7. Verification
+
+    // ========================================
+    // 7. ROUTING
+    // ========================================
+
+    const std::string routingResult =
+        routingAgent.process(validationResult);
+
+    std::cout
+        << "\nROUTING RESULT:\n"
+        << routingResult
+        << '\n';
+
+
+    // ========================================
+    // 8. VERIFICATION
+    // ========================================
+
     const std::string verificationResult =
-        verificationAgent.process(
-            validationResult
-        );
+        verificationAgent.process(routingResult);
 
     std::cout
         << "\nVERIFICATION RESULT:\n"
         << verificationResult
         << '\n';
 
-    // 8. Verify final approval
+
+    // ========================================
+    // 9. CHECK FINAL APPROVAL
+    // ========================================
+
     const json verifiedJson =
         json::parse(verificationResult);
+
 
     if (!verifiedJson.contains("verification") ||
         !verifiedJson["verification"].contains("approved"))
@@ -119,9 +165,11 @@ std::string MediFlowPipeline::process(
         );
     }
 
+
     const bool approved =
         verifiedJson["verification"]["approved"]
             .get<bool>();
+
 
     if (!approved)
     {
@@ -129,6 +177,11 @@ std::string MediFlowPipeline::process(
             "Patient verification failed."
         );
     }
+
+
+    // ========================================
+    // FINAL RESULT
+    // ========================================
 
     return verificationResult;
 }
