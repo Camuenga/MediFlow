@@ -1,0 +1,25 @@
+{
+	"BUILD_DIR" : "C:/ProgramData/QtCreator/Links/89259de8945f609773d3307db20d2f0c/MediFlowUI_autogen",
+	"CMAKE_BINARY_DIR" : "C:/ProgramData/QtCreator/Links/89259de8945f609773d3307db20d2f0c",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/ProgramData/QtCreator/Links/89259de8945f609773d3307db20d2f0c",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722",
+	"CMAKE_SOURCE_DIR" : "C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "MinGW Makefiles",
+	"INCLUDE_DIR" : "C:/ProgramData/QtCreator/Links/89259de8945f609773d3307db20d2f0c/MediFlowUI_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722/main.qml"
+	],
+	"LOCK_FILE" : "C:/ProgramData/QtCreator/Links/89259de8945f609773d3307db20d2f0c/CMakeFiles/MediFlowUI_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "qml" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_qml.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.5.3/mingw_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/ProgramData/QtCreator/Links/89259de8945f609773d3307db20d2f0c/CMakeFiles/MediFlowUI_autogen.dir/AutoRcc_qml_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722/qml.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}
