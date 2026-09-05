@@ -120,11 +120,13 @@ mkdir build
 cd build
 
 cmake .. -G "MinGW Makefiles" ^
+-DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/c++.exe ^
 -DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/gcc.exe ^
--DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/g++.exe ^
--DCMAKE_PREFIX_PATH=C:/msys64/mingw64 ^
--DOPENSSL_ROOT_DIR=C:/msys64/mingw64
-```
+-DOPENSSL_ROOT_DIR=C:/msys64/mingw64 ^
+-DOPENSSL_INCLUDE_DIR=C:/msys64/mingw64/include ^
+-DOPENSSL_SSL_LIBRARY=C:/msys64/mingw64/lib/libssl.dll.a ^
+-DOPENSSL_CRYPTO_LIBRARY=C:/msys64/mingw64/lib/libcrypto.dll.a ^
+-DCMAKE_PREFIX_PATH=C:/msys64/mingw64
 
 ### Build
 
