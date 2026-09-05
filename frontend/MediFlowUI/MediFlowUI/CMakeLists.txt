@@ -16,11 +16,15 @@ set(PROJECT_SOURCES
         main.cpp
         qml.qrc
 )
+set(APP_ICON
+    ${CMAKE_CURRENT_SOURCE_DIR}/resources/mediFlow.rc
+)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(MediFlowUI
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ${APP_ICON}
         mediflowapi.h mediflowapi.cpp
     )
 # Define target properties for Android with Qt 6 as:

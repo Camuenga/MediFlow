@@ -308,6 +308,14 @@ mediflowapi.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MediFlowUI.dir\build.make CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.s
 .PHONY : mediflowapi.cpp.s
 
+resources/mediFlow.obj: resources/mediFlow.rc.obj
+.PHONY : resources/mediFlow.obj
+
+# target to build an object file
+resources/mediFlow.rc.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MediFlowUI.dir\build.make CMakeFiles/MediFlowUI.dir/resources/mediFlow.rc.obj
+.PHONY : resources/mediFlow.rc.obj
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -336,6 +344,7 @@ help:
 	@echo ... mediflowapi.obj
 	@echo ... mediflowapi.i
 	@echo ... mediflowapi.s
+	@echo ... resources/mediFlow.obj
 .PHONY : help
 
 

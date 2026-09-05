@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MediFlowUI.dir/main.cpp.obj.d"
   "CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj"
   "CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj.d"
+  "CMakeFiles/MediFlowUI.dir/resources/mediFlow.rc.obj"
   "MediFlowUI.exe"
   "MediFlowUI.exe.manifest"
   "MediFlowUI.pdb"
@@ -20,6 +21,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang CXX RC)
   include(CMakeFiles/MediFlowUI.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

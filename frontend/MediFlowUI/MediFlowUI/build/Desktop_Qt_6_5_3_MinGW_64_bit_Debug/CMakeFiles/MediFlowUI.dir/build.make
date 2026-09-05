@@ -76,6 +76,7 @@ MediFlowUI_autogen/timestamp: CMakeFiles/MediFlowUI.dir/compiler_depend.ts
 
 MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp: C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722/qml.qrc
 MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp: CMakeFiles/MediFlowUI_autogen.dir/AutoRcc_qml_EWIEGA46WW_Info.json
+MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp: C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722/mainPicutre.ico
 MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp: C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722/main.qml
 MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp: C:/Qt/6.5.3/mingw_64/./bin/rcc.exe
 MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp: C:/Qt/6.5.3/mingw_64/./bin/rcc.exe
@@ -112,11 +113,16 @@ CMakeFiles/MediFlowUI.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MediFlowUI.dir/main.cpp.s"
 	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\ProgramData\QtCreator\Links\1e72a71f7f253b88592e6678676f5722\main.cpp -o CMakeFiles\MediFlowUI.dir\main.cpp.s
 
+CMakeFiles/MediFlowUI.dir/resources/mediFlow.rc.obj: CMakeFiles/MediFlowUI.dir/flags.make
+CMakeFiles/MediFlowUI.dir/resources/mediFlow.rc.obj: C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722/resources/mediFlow.rc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building RC object CMakeFiles/MediFlowUI.dir/resources/mediFlow.rc.obj"
+	C:\Qt\Tools\mingw1120_64\bin\windres.exe -O coff $(RC_DEFINES) $(RC_INCLUDES) $(RC_FLAGS) C:\ProgramData\QtCreator\Links\1e72a71f7f253b88592e6678676f5722\resources\mediFlow.rc CMakeFiles\MediFlowUI.dir\resources\mediFlow.rc.obj
+
 CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj: CMakeFiles/MediFlowUI.dir/flags.make
 CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj: CMakeFiles/MediFlowUI.dir/includes_CXX.rsp
 CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj: C:/ProgramData/QtCreator/Links/1e72a71f7f253b88592e6678676f5722/mediflowapi.cpp
 CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj: CMakeFiles/MediFlowUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj"
 	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj -MF CMakeFiles\MediFlowUI.dir\mediflowapi.cpp.obj.d -o CMakeFiles\MediFlowUI.dir\mediflowapi.cpp.obj -c C:\ProgramData\QtCreator\Links\1e72a71f7f253b88592e6678676f5722\mediflowapi.cpp
 
 CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.i: cmake_force
@@ -131,7 +137,7 @@ CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj: CMakeFi
 CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj: CMakeFiles/MediFlowUI.dir/includes_CXX.rsp
 CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj: MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp
 CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj: CMakeFiles/MediFlowUI.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
 	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj -MF CMakeFiles\MediFlowUI.dir\MediFlowUI_autogen\EWIEGA46WW\qrc_qml.cpp.obj.d -o CMakeFiles\MediFlowUI.dir\MediFlowUI_autogen\EWIEGA46WW\qrc_qml.cpp.obj -c C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\MediFlowUI_autogen\EWIEGA46WW\qrc_qml.cpp
 
 CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.i: cmake_force
@@ -146,6 +152,7 @@ CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.s: cmake_for
 MediFlowUI_OBJECTS = \
 "CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/MediFlowUI.dir/main.cpp.obj" \
+"CMakeFiles/MediFlowUI.dir/resources/mediFlow.rc.obj" \
 "CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj" \
 "CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
 
@@ -154,6 +161,7 @@ MediFlowUI_EXTERNAL_OBJECTS =
 
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/mocs_compilation.cpp.obj
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/main.cpp.obj
+MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/resources/mediFlow.rc.obj
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/mediflowapi.cpp.obj
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/MediFlowUI_autogen/EWIEGA46WW/qrc_qml.cpp.obj
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/build.make
@@ -168,7 +176,7 @@ MediFlowUI.exe: C:/Qt/6.5.3/mingw_64/lib/libQt6EntryPoint.a
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/linkLibs.rsp
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/objects1.rsp
 MediFlowUI.exe: CMakeFiles/MediFlowUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable MediFlowUI.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\ProgramData\QtCreator\Links\89259de8945f609773d3307db20d2f0c\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable MediFlowUI.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MediFlowUI.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
