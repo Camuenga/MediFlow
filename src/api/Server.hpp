@@ -2,6 +2,7 @@
 #define SERVER_H
 
 #include "llm/LLMClient.hpp"
+#include "MediFlowPipeline.hpp"
 
 class Server
 {
@@ -12,6 +13,8 @@ public:
 
 private:
     LLMClient* client;
+    MediFlowPipeline pipeline;
 };
 
 #endif
+

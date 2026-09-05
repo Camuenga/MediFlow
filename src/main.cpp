@@ -1,4 +1,4 @@
-#include "MediFlowPipeline.hpp"
+/*#include "MediFlowPipeline.hpp"
 
 #include <nlohmann/json.hpp>
 
@@ -63,6 +63,32 @@ int main()
     catch (const std::exception& e)
     {
         std::cerr << "\nERROR:\n"  << e.what()  << '\n';
+
+        return 1;
+    }
+
+    return 0;
+}*/
+
+#include "api/Server.hpp"
+
+#include <iostream>
+
+int main()
+{
+    try
+    {
+        LLMClient llmClient;
+
+        Server server(&llmClient);
+
+        server.run();
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "\nERROR:\n"
+                  << e.what()
+                  << '\n';
 
         return 1;
     }
